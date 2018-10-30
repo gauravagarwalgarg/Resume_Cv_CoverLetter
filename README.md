@@ -2,7 +2,7 @@
 
 Sourced from (https://github.com/posquit0/Awesome-CV)
 
-##Facts and Ever Lasting debate of `Resume` vs `CV`
+## Facts and Ever Lasting debate of `Resume` vs `CV`
 
 Three major differences between CVs and resumes are the length, the purpose and the layout. A resume is a brief summary of your skills and experience over one or two pages, a CV is more detailed and can stretch well beyond two pages. The resume will be tailored to each position whereas the CV will stay put and any changes will be in the cover letter.
 
