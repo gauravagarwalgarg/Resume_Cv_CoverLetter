@@ -1,0 +1,91 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+%\newcommand*{\sectiondir}{resume/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-darknight}
+
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%%% Essentials
+
+%\photo[circle,noedge,left]{./gaurav_agarwal.png}
+\name{Gaurav Agarwal}{}
+%\address{}
+\mobile{(+91) 805-083-7120}
+%%% Social
+% \gitlab{gitlab-id}
+%\stackoverflow{SO-id}{SO-name}
+\twitter{@gaurav27395}
+\email{gauravagarwal.27394@gmail.com}
+%\homepage{www.aboutme.com}
+\github{gaurav27394}
+\linkedin{gaurav-agrwal}
+
+%\quote{``2+ years experience specializing in the embedded development life cycle, automation, and testing. Interested in devising a better problem-solving method for challenging tasks, growing with learning new technologies and tools if the need arises."}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
+
+\makecvheader[C]
+
+\makecvfooter
+  {\today}
+  {Gaurav Agarwal~~~·~~~Résumé}
+  {\thepage}
+
+%%% Import contents
+%\input{resume/summary.tex}
+\input{resume/education.tex}
+\input{resume/experience.tex}
+\input{resume/academic_projects.tex}
+\input{resume/program_committees.tex}
+\input{resume/awards_and_accolades.tex}
+
+\end{document}
