@@ -29,7 +29,7 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-emerald}
+\colorlet{awesome}{awesome-red}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
 
@@ -40,6 +40,14 @@
 % \definecolor{graytext}{HTML}{5D5D5D}
 % \definecolor{lighttext}{HTML}{999999}
 
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
@@ -47,7 +55,9 @@
 % Available options: circle|rectangle,edge/noedge,left/right
 \photo[circle,noedge,left]{./gaurav_agarwal.png}
 \name{Gaurav Agarwal}{}
-%\address{}
+\position{Software Systems{\enskip\cdotp\enskip}Embedded Systems}
+\address{006, Tamarind Enclave, MEG Layout, KR Puram, Bangalore-16}
+
 \mobile{(+91) 805-083-7120}
 %%% Social
 % \gitlab{gitlab-id}
@@ -71,9 +81,9 @@
 % The date on the letter, default is the date of compilation
 \letterdate{\today}
 % The title of the letter
-\lettertitle{Job Application for Software Systems Engineer}
+\lettertitle{Job Application for `???`}
 % How the letter is opened
-\letteropening{Dear Mr./Ms./Dr. LastName,}
+\letteropening{Dear Sir/Ma'am,}
 % How the letter is closed
 \letterclosing{Sincerely,}
 % Any enclosures with the letter
@@ -85,13 +95,13 @@
 
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
+\makecvheader[R]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Gaurav Agarwal}
+  {Gaurav Agarwal~~~·~~~Cover Letter}
   {}
 
 % Print the title with above letter informations
@@ -102,12 +112,12 @@
 %-------------------------------------------------------------------------------
 \begin{cvletter}
 
-\cvparagraph{About Me}
-
-\cvparagraph{Why Google?}
-
-\cvparagraph{Why Me?}
-
+\lettersection{About Me}
+Blah!
+\lettersection{Why Analog Devices?}
+Blah!
+\lettersection{Why Me?}
+Blah!
 \end{cvletter}
 
 
