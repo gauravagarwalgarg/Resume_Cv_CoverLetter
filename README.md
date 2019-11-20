@@ -102,4 +102,4 @@ Please help him to keep this project alive! Donations are welcome and will go to
 You are free to take my `.tex` file and modify it to create your own resume. Please don't use my resume for anything else without my permission, though!
 
 ## Contact
-Gaurav Agarwal <compnaut@gmail.com>
+Gaurav Agarwal <compnaut@gmail(dot)com>
