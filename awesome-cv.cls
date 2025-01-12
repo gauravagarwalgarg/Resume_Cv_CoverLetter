@@ -132,7 +132,7 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
-\definecolor{darktext}{HTML}{414141}
+\definecolor{darktext}{HTML}{222222}
 \colorlet{text}{darkgray}
 \colorlet{graytext}{gray}
 \colorlet{lighttext}{lightgray}
@@ -188,11 +188,11 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{darktext}\textbf{#1}}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{darktext}\textbf{#1}}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
-\newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
-\newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{2em}\headerfont\itshape\color{text} #1}\vspace{2mm}}
+\newcommand*{\headersocialstyle}[1]{{\fontsize{8pt}{2em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -550,9 +550,6 @@
   \vspace{\acvSectionContentTopSkip}
   \vspace{-3mm}
   \paragraphstyle
-}{%
-  \par
-  \vspace{2mm}
 }
 
 % Define an environment for cventry
@@ -564,6 +561,25 @@
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
+%\newcommand*{\cventry}[5]{%
+%  \vspace{-2.0mm}
+%  \setlength\tabcolsep{0pt}
+%  \setlength{\extrarowheight}{0pt}
+%  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+%    \ifempty{#2#3}
+%      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+%      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+%      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+%      \if\relax\detokenize{#5}\relax\else % THIS LINE ADDED TO CHECK IF LAST ARGUMENT IS EMPTY
+%      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}% ONLY DO THIS IF #5 IS NOT EMPTY
+%      \fi % END OF THE IF STATEMENT
+%      %\ifempty{#5}{}{\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+%      %\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+%  \end{tabular*}%
+%}
+
+% Define an entry of cv information
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
@@ -573,9 +589,11 @@
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+      % \ifempty{#5}{}{\\\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
+
 
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
