@@ -1,112 +1,214 @@
-# LaTeX files for my Resume, CV and Cover Letter.
+# Resume, CV & Cover Letter
 
-Sourced from (https://github.com/posquit0/Awesome-CV)
+LaTeX-based professional documents using the [Awesome-CV](https://github.com/posquit0/Awesome-CV) template with custom formatting optimizations.
 
-## Install `utils`
+---
 
-* cd to the Repo -> `Resume_Cv_CoverLetter`
-* Run -> ./install.sh
+## Documents
 
-The install script works for `Ubuntu`
+| Document | Pages | Purpose | Output |
+|----------|-------|---------|--------|
+| **Resume** | 1 | Targeted, concise summary for specific roles | `gaurav_agarwal_resume.pdf` |
+| **CV** | 2 | Comprehensive career history for academic/detailed applications | `gaurav_agarwal_cv.pdf` |
+| **Cover Letter** | 1 | Personalized introduction for each application | `gaurav_agarwal_cover_letter.pdf` |
 
-## Facts and Ever Lasting debate of `Resume` vs `CV`
+---
 
-Three major differences between CVs and resumes are the length, the purpose and the layout. A resume is a brief summary of your skills and experience over one or two pages, a CV is more detailed and can stretch well beyond two pages. The resume will be tailored to each position whereas the CV will stay put and any changes will be in the cover letter.
+## Structure
 
-A CV has a clear chronological order listing the whole career of the individual whereas a resume’s information can be shuffled around to best suit the applicant. One might say the main difference between a resume and a CV is that a CV is intended to be a full record of your career history and a resume is a brief, targeted list of skills and achievements.
-
-What is CV?
-
-CV is a long application document and may be even 5 pages long. It covers in-depth all information including academic background, research experience, awards, honors, publications, teaching, volunteering experience and other specific accomplishments.
-
-Commonly it is used to apply for some academic, educational, governmental or scientific positions. CV is used when applying for grants, scholarships, internships and fellowships. It will come in handy for people working in medical field as well.
-
-CV is also required for overseas job openings. If you want go international, employers from Europe, Asia and Middle East will certainly require a CV instead of a resume.
-
-What is resume?
-
-On the contrary, resume is the most common document required from job applicants.
-
-A resume is a brief summary of your skills, abilities, qualification, work history and educational background of a candidate (Ideally not more than a page or so). It might be customized to the specific job opening and may contain only relevant information to the current position.
-
-There are 3 main resume formats:
-
-    chronological resume format
-    functional resume format
-    combination resume format
-
-In addition, you may write a creative resume and include graphics, pics and non-standard resume fonts for it.
-
-Also, it has differences in its structure, for ex., you may mention your biggest professional achievements, or include objective/summary section in a resume.
-
-Traditionally, resume shouldn't be longer than two A4 pages. It’s intended to be short, as a recruiter spends only around 8 seconds to skim applicant’s resume.
-
-It’s important to adjust a resume to a specific position in order to fit the needs and requirements. If you think that some of your past career experience won’t make any difference to an HR — erase it.
-
-Source:- https://www.quora.com/What-is-the-difference-between-CV-and-resume-2
-
-## Guildlines - How to write?
-
-Cover Letter - (https://www.glassdoor.com/blog/guide/how-to-write-a-cover-letter/)
-
-Resume or CV - (https://novoresume.com/career-blog/how-to-write-a-resume-guide/)
-
-## User Insights
-
-Open the pdf via any pdf reader to have a quick outlook of present Template.
-Modify the existing `.tex` files to make your own `Awesome-CV` with awesome fonts and colors.
-
-## Requirements
-
-A full TeX distribution is assumed.  [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
-You can [install TeX from upstream](http://tex.stackexchange.com/q/1092) (recommended; most up-to-date) or use `sudo apt-get install texlive-full` if you really want that.  (It's generally a few years behind.)
-
-## Usage
-
-At a command prompt, run
-
-```bash
-$ xelatex {your-cv}.tex
+```
+Resume_Cv_CoverLetter/
+├── gaurav_agarwal_resume.tex       # Resume entry point
+├── gaurav_agarwal_cv.tex           # CV entry point
+├── gaurav_agarwal_cover_letter.tex # Cover letter entry point
+├── awesome-cv.cls                  # Template class (customized)
+├── fontawesome.sty                 # Icon support
+├── resume/                         # Resume sections
+│   ├── objective.tex               # Professional summary
+│   ├── experience.tex              # Work experience (targeted)
+│   ├── skills.tex                  # Technical skills
+│   ├── education.tex               # Education
+│   ├── academic_projects.tex       # Key projects
+│   ├── publications.tex            # Publications
+│   └── program_committees.tex      # Community involvement
+├── cv/                             # CV sections (more detailed)
+│   ├── summary.tex                 # Extended professional summary
+│   ├── industry_experience.tex     # Full work history
+│   ├── academic_projects.tex       # All projects
+│   ├── skills.tex                  # Comprehensive skills
+│   ├── education.tex               # Education details
+│   ├── awards_and_accolades.tex    # Awards
+│   └── program_committees.tex      # Committees & volunteering
+├── fonts/                          # Roboto + FontAwesome (bundled)
+├── makefile                        # Build system
+└── install.sh                      # Ubuntu dependency installer
 ```
 
-or
+---
 
-Build using makefile for all target folders and `.tex` files.
+## Build
+
+### Prerequisites
 
 ```bash
-$ make clean && make all
+# Ubuntu / WSL
+sudo apt install texlive-xetex texlive-fonts-extra texlive-latex-extra latexmk
+
+# Or full TeX Live (larger but complete)
+sudo apt install texlive-full
+
+# Or use the install script
+./install.sh
 ```
-This should result in the creation of ``{your_cv}.pdf`` / ``{your_resume}.pdf`` / ``{your_cover_letter}.pdf``
 
-## What is Awesome CV?
+### Compile
 
-**Awesome CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv). It is easy to customize your own template, especially since it is really written by a clean, semantic markup.
+```bash
+# Build all documents
+make clean && make all
 
-## Donation
+# Build individually
+xelatex gaurav_agarwal_resume.tex
+xelatex gaurav_agarwal_cv.tex
+xelatex gaurav_agarwal_cover_letter.tex
+```
 
-Please help him to keep this project alive! Donations are welcome and will go towards further development of this project.
+### Output
 
-    PayPal: paypal.me/posquit0
-    BTC: 1Je3DxJVM2a9nTVPNo55SfQwpmxA6N2KKb
-    BCH: 1Mg1wG7PwHGrHYSWS67TsGSjo5GHEVbF16
-    ETH: 0x77ED9B4659F80205E9B9C9FB1E26EDB9904AFCC7
-    QTUM: QZT7D6m3QtTTqp7s4ZWAwLtGDsoHMMaM8E
+PDFs are generated in the root directory:
+- `gaurav_agarwal_resume.pdf`
+- `gaurav_agarwal_cv.pdf`
+- `gaurav_agarwal_cover_letter.pdf`
 
-*Thank you for your support!*
+---
 
-## Credit
+## Customization Guide
 
-[**LaTeX**](http://www.latex-project.org) is a fantastic typesetting program that a lot of people use these days, especially the math and computer science people in academia.
+### Change Colors
 
-[**LaTeX FontAwesome**](https://github.com/furl/latex-fontawesome) is bindings for FontAwesome icons to be used in XeLaTeX.
+In the `.tex` entry files, modify the accent color:
 
-[**Roboto**](https://github.com/google/roboto) is the default font on Android and ChromeOS, and the recommended font for Google’s visual language, Material Design.
+```latex
+% Predefined: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink,
+%             awesome-orange, awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-darknight}
 
-[**Source Sans Pro**](https://github.com/adobe-fonts/source-sans-pro) is a set of OpenType fonts that have been designed to work well in user interface (UI) environments.
+% Or define custom hex color
+\definecolor{awesome}{HTML}{2B579A}
+```
 
-## Warning
+### Change Fonts
 
-You are free to take my `.tex` file and modify it to create your own resume. Please don't use my resume for anything else without my permission, though!
+Fonts are in `fonts/`. The template uses:
+- **Roboto** (body text) -- clean, modern, highly readable
+- **FontAwesome** (icons) -- social media and contact icons
+
+To change, replace `.ttf` files and update `\fontdir[fonts/]` in the class.
+
+### Add/Remove Sections
+
+In the main `.tex` file, comment/uncomment `\input{}` lines:
+
+```latex
+\input{resume/objective.tex}
+\input{resume/experience.tex}
+\input{resume/skills.tex}
+\input{resume/education.tex}
+%\input{resume/academic_projects.tex}    % Uncomment to include
+%\input{resume/publications.tex}
+```
+
+### Adjust Margins
+
+```latex
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+```
+
+For a tighter 1-page resume, reduce margins:
+```latex
+\geometry{left=1.2cm, top=.6cm, right=1.2cm, bottom=1.2cm, footskip=.4cm}
+```
+
+---
+
+## Resume vs CV: When to Use What
+
+| Aspect | Resume | CV |
+|--------|--------|-----|
+| Length | 1 page (strict) | 2 pages max |
+| Content | Targeted to specific role | Full career history |
+| Order | Most relevant first | Chronological |
+| Use case | Industry jobs, startups | Academic, government, overseas |
+| Customization | Tailored per application | Mostly static |
+
+### Cover Letter
+
+Always customize per application. The template provides:
+- **About Me** -- who you are, current role
+- **Why Company** -- what attracts you to them
+- **Why Me** -- what you bring to the table
+
+---
+
+## Section Design Philosophy
+
+### Resume Sections (1 page)
+1. **Objective/Summary** -- 2-3 lines, role-specific
+2. **Experience** -- 2-3 most relevant roles, 4-6 bullets each
+3. **Skills** -- Grouped by category (Languages, Platforms, Tools)
+4. **Education** -- Degree, institution, year
+
+### CV Sections (2 pages)
+1. **Summary** -- Extended professional narrative
+2. **Industry Experience** -- Full work history with all roles
+3. **Academic Projects** -- Research and significant projects
+4. **Skills** -- Comprehensive technical inventory
+5. **Education** -- Full academic background
+6. **Awards** -- Honors and recognitions (optional)
+
+---
+
+## Formatting Best Practices
+
+- **Font size**: 11pt body, section headers auto-scaled by class
+- **Bullet points**: Start with strong action verbs (Designed, Built, Led, Implemented)
+- **Quantify**: Include metrics where possible (team size, performance gains, systems delivered)
+- **Keywords**: Match job description terminology for ATS parsing
+- **Consistency**: Same tense (past for previous roles, present for current)
+- **White space**: Don't cram -- readability > density
+
+---
+
+## ATS (Applicant Tracking System) Compatibility
+
+The Awesome-CV template produces ATS-friendly PDFs because:
+- Text is selectable (not images)
+- Standard section headings (Experience, Education, Skills)
+- No tables or complex layouts that confuse parsers
+- Clean font rendering via XeLaTeX
+
+---
+
+## Modern Resume Trends (2024+)
+
+- **1 page is non-negotiable** for < 10 years experience
+- **No photo** for US/UK applications (bias concerns)
+- **No objective statement** -- replace with 1-line professional summary
+- **Skills section near top** -- recruiters scan in F-pattern
+- **Links are essential** -- GitHub, LinkedIn, portfolio
+- **Tailored per role** -- generic resumes get filtered out
+- **PDF only** -- never submit .doc/.docx
+
+---
+
+## Template Credit
+
+Based on [Awesome-CV](https://github.com/posquit0/Awesome-CV) by Claud D. Park, licensed under CC BY-SA 4.0.
+
+**Fonts**: [Roboto](https://github.com/google/roboto) (Google), [FontAwesome](https://fontawesome.com/) (icons)
+
+---
 
 ## Contact
-Gaurav Agarwal <gauravagarwalgarg@gmail(dot)com>
+
+Gaurav Agarwal -- [gauravagarwalgarg@gmail.com](mailto:gauravagarwalgarg@gmail.com) -- [GitHub](https://github.com/GauravAgarwalGarg) -- [LinkedIn](https://linkedin.com/in/gauravagarwalgarg)

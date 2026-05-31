@@ -1,11 +1,26 @@
-# Install Make
-sudo apt install -y make
+#!/bin/bash
+# Install LaTeX dependencies for Awesome-CV on Ubuntu/Debian
+# Usage: ./install.sh
 
-# Install texlive dependencies
-sudo apt install -y texlive-xetex
+set -e
 
-# For all extra fonts
-sudo apt-get install -y texlive-fonts-extra
+echo "Installing TeX Live packages for Awesome-CV..."
 
-# For Awesome font only
-# sudo apt-get install -y fonts-font-awesome
+sudo apt-get update
+sudo apt-get install -y \
+    texlive-xetex \
+    texlive-fonts-extra \
+    texlive-fonts-recommended \
+    texlive-latex-extra \
+    texlive-latex-recommended \
+    fonts-roboto \
+    poppler-utils
+
+echo ""
+echo "Installation complete. Build with:"
+echo "  make all"
+echo ""
+echo "Or individually:"
+echo "  make resume"
+echo "  make cv"
+echo "  make cover"

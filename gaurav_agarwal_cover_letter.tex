@@ -1,128 +1,88 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for Cover Letter
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Authors:
-% Claud D. Park <posquit0.bj@gmail.com>
-% Lars Richter <mail@ayeks.de>
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
+% Gaurav Agarwal - Cover Letter
+% Based on Awesome-CV by Claud D. Park
+% License: CC BY-SA 4.0
 
-
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, a4paper]{awesome-cv}
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=0.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-% Specify the location of the included fonts
+% Font directory
 \fontdir[fonts/]
 
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-darknight}
-% Uncomment if you would like to specify your own color
-\definecolor{awesome}{HTML}{222222}
-%% Colors for text
-\definecolor{darktext}{HTML}{333333}
-\definecolor{text}{HTML}{222222}
-%\definecolor{graytext}{HTML}{0457A0}
-\definecolor{lighttext}{HTML}{666666}
+% DARK text colors -- readable on bright screens
+\definecolor{darktext}{HTML}{000000}
+\definecolor{text}{HTML}{111111}
+\definecolor{graytext}{HTML}{222222}
+\definecolor{lighttext}{HTML}{333333}
 
-% Set false if you don't want to highlight section with awesome color
+% Color theme
+\colorlet{awesome}{awesome-darknight}
+
+% Section color highlighting
 \setbool{acvSectionColorHighlight}{true}
 
-% If you would like to change the social information separator from a pipe (|) to something else
+% Social separator
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \photo[circle,noedge,left]{./gaurav_agarwal.png}
-\name{Gaurav Agarwal}{}
+\name{Gaurav}{Agarwal}
 \position{Systems Software{\enskip\cdotp\enskip}Embedded Systems{\enskip\cdotp\enskip}Avionics}
-\address{\#Bangalore, India}
-
+\address{Bangalore, India}
 \mobile{(+91) 805-083-7120}
-%%% Social
-% \gitlab{gitlab-id}
-%\stackoverflow{SO-id}{SO-name}
-%\twitter{gauravaggarg}
 \email{gauravagarwalgarg@gmail.com}
-%\homepage{www.aboutme.com}
 \github{gauravagarwalgarg}
 \linkedin{gauravagarwalgarg}
 
-%\quote{"Dream big, start small. But most of all, start."}
-
-%-------------------------------------------------------------------------------
-%	LETTER INFORMATION
-%	All of the below lines must be filled out
-%-------------------------------------------------------------------------------
-% The company being applied to
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Letter Information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \recipient
   {Company Recruitment Team}
   {Company Name\\Address\\Location}
-% The date on the letter, default is the date of compilation
 \letterdate{\today}
-% The title of the letter
-\lettertitle{Job Application for "Software Engineer"}
-% How the letter is opened
+\lettertitle{Job Application for ``Software Engineer''}
 \letteropening{Dear Sir/Madam,}
-% How the letter is closed
 \letterclosing{Sincerely,}
-% Any enclosures with the letter
 \letterenclosure[Attached]{Curriculum Vitae}
 
-%-------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader[R]
 
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {Gaurav Agarwal~~~·~~~Cover Letter}
+  {Gaurav Agarwal~~~\cdotp~~~Cover Letter}
   {}
 
-% Print the title with above letter informations
 \makelettertitle
 
-%-------------------------------------------------------------------------------
-%	LETTER CONTENT
-%-------------------------------------------------------------------------------
 \begin{cvletter}
 
 \lettersection{About Me}
 
-    \large I am Gaurav Agarwal, currently working as a Software Engineer 2 (Avionics \& Embedded) at Boeing India Pvt. Ltd., Bangalore. I graduated in Electrical and Electronics Engineering from the P.E.S. Institute of Technology, Bangalore. I am passionate about computing systems and software development methodologies across platforms. My current role involves performing requirements analysis, software design, development, and testing, as well as leading the architecture design for innovative new systems. With hands-on industry experience in researching, designing, and developing aerospace products, I have successfully worked on challenging engineering projects, managing them in terms of cost, time, and quality. This ensures that project tasks are correctly interpreted, planned, technical reports are written, and the final product is delivered according to the specifications.
+I am Gaurav Agarwal, currently working as a Software Engineer 3 (Avionics \& Embedded) at Boeing India Pvt. Ltd., Bangalore. I graduated in Electrical and Electronics Engineering from P.E.S. Institute of Technology, Bangalore. I am passionate about computing systems and software development methodologies across platforms. My current role involves performing requirements analysis, software design, development, and testing, as well as leading the architecture design for innovative new systems. With hands-on industry experience in researching, designing, and developing aerospace products, I have successfully worked on challenging engineering projects, managing them in terms of cost, time, and quality.
 
-\lettersection{Why `Company's Name`?}
+\lettersection{Why Company?}
 
-    \large I observe that [Company's Name] is emerging as a pioneer and setting the early trends for the adoption of cutting-edge technologies, particularly in the areas of [specific technologies, e.g., embedded systems, avionics, real-time processing, AI, machine learning, etc.]. Being a part of an industry leader that is at the forefront of innovation presents a unique opportunity to leverage my technical expertise while unlocking my full learning potential through its diverse applications and products. With the company's global reach and its focus on scaling innovative technology stacks, I am eager to contribute to and learn from advancements in [relevant technologies, e.g., embedded systems, software integration, hardware-software interaction]. I look forward to collaborating with a team that is working on next-generation solutions and deepening my understanding of complex system architectures, real-time software development, and the latest trends in [specific technical field, e.g., space avionics, AI-driven systems, autonomous technologies, etc.]. I am confident that this role will not only challenge me but also provide valuable insights into the future of technology on a daily basis.
+I observe that [Company's Name] is emerging as a pioneer and setting the early trends for the adoption of cutting-edge technologies, particularly in the areas of [specific technologies]. Being a part of an industry leader that is at the forefront of innovation presents a unique opportunity to leverage my technical expertise while unlocking my full learning potential through its diverse applications and products. With the company's global reach and its focus on scaling innovative technology stacks, I am eager to contribute to and learn from advancements in [relevant technologies]. I look forward to collaborating with a team that is working on next-generation solutions and deepening my understanding of complex system architectures and real-time software development.
 
 \lettersection{Why Me?}
 
-    \large As a driven professional, I am eager to advance my expertise in software systems design, development, and programming within an organization committed to the highest standards of integrity, innovation, and technical excellence. I thrive both independently and within team environments, adept at managing multiple tasks and quickly adapting to dynamic technical challenges. My ability to analyze complex problems, document procedures, and implement effective, tested solutions has consistently contributed to meeting and exceeding project goals. With a strong focus on leveraging cutting-edge technologies and efficient development methodologies, I am confident in my ability to add value to your team. I am submitting my resume for your consideration for the ‘Software Engineer’ position at [Company's Name].
+As a driven professional, I am eager to advance my expertise in software systems design, development, and programming within an organization committed to the highest standards of integrity, innovation, and technical excellence. I thrive both independently and within team environments, adept at managing multiple tasks and quickly adapting to dynamic technical challenges. My ability to analyze complex problems, document procedures, and implement effective, tested solutions has consistently contributed to meeting and exceeding project goals. I am submitting my resume for your consideration for the ``Software Engineer'' position at [Company's Name].
 
 \end{cvletter}
 
-%-------------------------------------------------------------------------------
-% Print the signature and enclosures with above letter informations
 \makeletterclosing
 
 \end{document}

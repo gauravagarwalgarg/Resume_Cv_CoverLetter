@@ -1,88 +1,67 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
-
+% Gaurav Agarwal - Curriculum Vitae (2 pages, bold & readable)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Themes: Awesome-CV
 \documentclass[11pt, a4paper]{awesome-cv}
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+% Margins
+\geometry{left=1.4cm, top=0.8cm, right=1.4cm, bottom=1.0cm, footskip=.5cm}
 
-%%% Override a directory location for fonts(default: 'fonts/')
+% Font directory
 \fontdir[fonts/]
 
-%%% Configure a directory location for sections
-%\newcommand*{\sectiondir}{cv/}
+% DARK text colors -- readable on bright screens
+\definecolor{darktext}{HTML}{000000}
+\definecolor{text}{HTML}{111111}
+\definecolor{graytext}{HTML}{222222}
+\definecolor{lighttext}{HTML}{333333}
 
-%%% Override color
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-%% Color for highlight
-% Define your custom color if you don't like awesome colors
+% Accent color
 \colorlet{awesome}{awesome-darknight}
-\definecolor{awesome}{HTML}{000000}
-%% Colors for text
-\definecolor{darktext}{HTML}{0F0C08}
-\definecolor{text}{HTML}{010203}
-\definecolor{graytext}{HTML}{141414}
-\definecolor{lighttext}{HTML}{1B1B1B}
 
-% Set false if you don't want to highlight section with awesome color
+% Section color highlighting
 \setbool{acvSectionColorHighlight}{true}
-%%% Override a separator for social informations in header(default: ' | ')
+
+% Social separator
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Prevent orphaned section headers at page bottom
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Personal Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Essentials
-\name{Gaurav Agarwal}{}
-%\address{\#402, Mathura Villa, Tapadia complex, Station Road, Jamshedpur}
-
+\name{Gaurav}{Agarwal}
 \mobile{(+91) 805-083-7120}
-%%% Social
 \email{gauravagarwalgarg@gmail.com}
-%\homepage{www.aboutme.com}
-\stackoverflow{6194954}{gaurav-agarwal-garg}
 \github{gauravagarwalgarg}
 \linkedin{gauravagarwalgarg}
 
-%\quote{``Dream big, start small. But most of all, start."}
-
-%%% Make a header for CV with personal data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \makecvheader[C]
-%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
 
 \makecvfooter
   {\today}
-  {Gaurav Agarwal~~~·~~~~Curriculum Vitae}
+  {Gaurav Agarwal~~~\cdotp~~~Curriculum Vitae}
   {\thepage}
 
-%%% Import contents
+%%% Sections flow naturally -- widowpenalty prevents orphaned headers
 \input{cv/summary.tex}
 \input{cv/industry_experience.tex}
-\input{cv/academic_projects.tex}
+
+% Force page break BEFORE skills to prevent orphaned header
+\newpage
 \input{cv/skills.tex}
-\input{resume/education.tex}
-%\input{cv/program_committees.tex}
-%\input{cv/extra_curricular_activities.tex}
-%\input{cv/awards_and_accolades.tex}
+\input{cv/academic_projects.tex}
+\input{cv/education.tex}
 
 \end{document}

@@ -1,91 +1,67 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
-
+% Gaurav Agarwal - Resume (1 page, bold, fills the page)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Themes: Awesome-CV
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[12pt, a4paper]{awesome-cv}
 \usepackage{fontawesome}
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-% Specify the location of the included fonts
+% Margins
+\geometry{left=1.4cm, top=0.8cm, right=1.4cm, bottom=0.8cm, footskip=.4cm}
+
+% Font directory
 \fontdir[fonts/]
 
-%%% Configure a directory location for sections
-%\newcommand*{\sectiondir}{resume/}
+% DARK text colors -- pop on bright screens
+\definecolor{darktext}{HTML}{000000}
+\definecolor{text}{HTML}{111111}
+\definecolor{graytext}{HTML}{222222}
+\definecolor{lighttext}{HTML}{333333}
 
-%%% Override color
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-%% Color for highlight
-% Define your custom color if you don't like awesome colors
+% Accent color
 \colorlet{awesome}{awesome-darknight}
-%\definecolor{awesome}{HTML}{000000}
-%% Colors for text
-%\definecolor{darktext}{HTML}{0F0C08}
-%\definecolor{text}{HTML}{010203}
-%\definecolor{graytext}{HTML}{141414}
-%\definecolor{lighttext}{HTML}{1B1B1B}
 
-% Set false if you don't want to highlight section with awesome color
+% Section color highlighting
 \setbool{acvSectionColorHighlight}{true}
 
-
-% If you would like to change the social information separator from a pipe (|) to something else
+% Social separator
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-%%% Essentials
+% Prevent orphaned headers
+\widowpenalty=10000
+\clubpenalty=10000
 
-%\photo[circle,noedge,left]{./gaurav_agarwal.png}
-\name{Gaurav Agarwal}{}
-%\address{\#402, Mathura Villa, Tapadia complex, Station Road, Jamshedpur}
-%\address{Bengaluru, India}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\name{Gaurav}{Agarwal}
 \mobile{(+91) 805-083-7120}
-%%% Social
-% \gitlab{gitlab-id}
-\stackoverflow{6194954}{gaurav-agarwal-garg}
-%\twitter{@gauravaggarg}
 \email{gauravagarwalgarg@gmail.com}
-%\homepage{www.aboutme.com}
 \github{gauravagarwalgarg}
 \linkedin{gauravagarwalgarg}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
-%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
 
 \makecvheader[C]
 
 \makecvfooter
   {\today}
-  {Gaurav Agarwal~~~·~~~Résumé}
+  {Gaurav Agarwal~~~\cdotp~~~R\'{e}sum\'{e}}
   {\thepage}
 
-%%% Import contents
+%%% Sections with \vfill to distribute space evenly
 \input{resume/objective.tex}
+\vfill
 \input{resume/experience.tex}
+\vfill
 \input{resume/skills.tex}
+\vfill
 \input{resume/education.tex}
-%\input{resume/academic_projects.tex}
-%\input{resume/program_committees.tex}
-%\input{resume/publications.tex}
+\vfill
 
 \end{document}
