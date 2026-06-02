@@ -1,6 +1,6 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% Gaurav Agarwal - Resume (1 page, bold, fills the page)
+% Gaurav Agarwal - Resume (1 page, bold & readable at first glance)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Configuration
@@ -14,11 +14,11 @@
 % Font directory
 \fontdir[fonts/]
 
-% DARK text colors -- pop on bright screens
+% DARK text colors -- maximum contrast on bright screens
 \definecolor{darktext}{HTML}{000000}
-\definecolor{text}{HTML}{111111}
-\definecolor{graytext}{HTML}{222222}
-\definecolor{lighttext}{HTML}{333333}
+\definecolor{text}{HTML}{000000}
+\definecolor{graytext}{HTML}{111111}
+\definecolor{lighttext}{HTML}{222222}
 
 % Accent color
 \colorlet{awesome}{awesome-darknight}
@@ -33,10 +33,30 @@
 \widowpenalty=10000
 \clubpenalty=10000
 
+% ============================================================
+% OVERRIDE CLASS FONT SIZES -- make everything bigger & bolder
+% ============================================================
+% Entry title (company name): 10pt -> 12pt bold
+\renewcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+% Entry position (role): 8pt -> 10pt
+\renewcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+% Entry date: 8pt -> 10pt
+\renewcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\slshape\color{graytext} #1}}
+% Entry location: 9pt -> 10pt
+\renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\slshape\color{awesome} #1}}
+% Description (bullet points): bigger to fill page
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{11.5pt}{1em}\bodyfont\upshape\color{text} #1}}
+% Paragraph style (summary)
+\renewcommand*{\paragraphstyle}{\fontsize{11.5pt}{1em}\bodyfont\upshape\color{text}}
+% Skill style: use bodyfont not light
+\renewcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{text} #1}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Personal Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \name{Gaurav}{Agarwal}
+\position{Systems Software{\enskip\cdotp\enskip}Embedded Systems{\enskip\cdotp\enskip}Avionics}
 \mobile{(+91) 805-083-7120}
 \email{gauravagarwalgarg@gmail.com}
 \github{gauravagarwalgarg}
@@ -54,14 +74,9 @@
   {Gaurav Agarwal~~~\cdotp~~~R\'{e}sum\'{e}}
   {\thepage}
 
-%%% Sections with \vfill to distribute space evenly
 \input{resume/objective.tex}
-\vfill
 \input{resume/experience.tex}
-\vfill
 \input{resume/skills.tex}
-\vfill
 \input{resume/education.tex}
-\vfill
 
 \end{document}

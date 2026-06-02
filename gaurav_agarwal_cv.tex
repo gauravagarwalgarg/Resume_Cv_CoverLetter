@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[12pt, a4paper]{awesome-cv}
 
 % Margins
 \geometry{left=1.4cm, top=0.8cm, right=1.4cm, bottom=1.0cm, footskip=.5cm}
@@ -13,11 +13,11 @@
 % Font directory
 \fontdir[fonts/]
 
-% DARK text colors -- readable on bright screens
+% DARK text colors -- maximum contrast
 \definecolor{darktext}{HTML}{000000}
-\definecolor{text}{HTML}{111111}
-\definecolor{graytext}{HTML}{222222}
-\definecolor{lighttext}{HTML}{333333}
+\definecolor{text}{HTML}{000000}
+\definecolor{graytext}{HTML}{111111}
+\definecolor{lighttext}{HTML}{222222}
 
 % Accent color
 \colorlet{awesome}{awesome-darknight}
@@ -28,15 +28,28 @@
 % Social separator
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-% Prevent orphaned section headers at page bottom
+% Prevent orphaned section headers
 \widowpenalty=10000
 \clubpenalty=10000
 \raggedbottom
+
+% ============================================================
+% OVERRIDE CLASS FONT SIZES -- bigger & bolder for readability
+% ============================================================
+\renewcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\renewcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\slshape\color{graytext} #1}}
+\renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\slshape\color{awesome} #1}}
+\renewcommand*{\descriptionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\upshape\color{text} #1}}
+\renewcommand*{\paragraphstyle}{\fontsize{12pt}{1em}\bodyfont\upshape\color{text}}
+\renewcommand*{\skilltypestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\renewcommand*{\skillsetstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{text} #1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Personal Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \name{Gaurav}{Agarwal}
+\position{Systems Software{\enskip\cdotp\enskip}Embedded Systems{\enskip\cdotp\enskip}Avionics}
 \mobile{(+91) 805-083-7120}
 \email{gauravagarwalgarg@gmail.com}
 \github{gauravagarwalgarg}
@@ -54,14 +67,10 @@
   {Gaurav Agarwal~~~\cdotp~~~Curriculum Vitae}
   {\thepage}
 
-%%% Sections flow naturally -- widowpenalty prevents orphaned headers
 \input{cv/summary.tex}
 \input{cv/industry_experience.tex}
-
-% Force page break BEFORE skills to prevent orphaned header
-\newpage
-\input{cv/skills.tex}
 \input{cv/academic_projects.tex}
+\input{cv/skills.tex}
 \input{cv/education.tex}
 
 \end{document}
